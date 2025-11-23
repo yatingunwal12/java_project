@@ -287,9 +287,9 @@ class Hotel
     {
         double amount=0;
         String list[]={"Sandwich","Pasta","Noodles","Coke"};
-        System.out.println("\n*");
+        System.out.println("\n*******");
         System.out.println(" Bill:-");
-        System.out.println("*");
+        System.out.println("*******");
                
         switch(rtype)
         {
@@ -571,3 +571,18 @@ public class Main {
             if(!(wish=='y'||wish=='Y'||wish=='n'||wish=='N'))
             {
                 System.out.println("Invalid Option");
+                System.out.println("\nContinue : (y/n)");
+                wish=sc.next().charAt(0); 
+            }
+            
+        }while(wish=='y'||wish=='Y');    
+        
+        Thread t=new Thread(new write(Hotel.hotel_ob));
+        t.start();
+        }        
+            catch(Exception e)
+            {
+                System.out.println("Not a valid input");
+            }
+    }
+}
